@@ -12,6 +12,9 @@
 
 ## Versionning
 
+### v1.1.0
+- Add Github repo.
+
 ### v1.0.3
 - Change project's name.
 
