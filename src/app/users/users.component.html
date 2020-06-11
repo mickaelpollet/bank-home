@@ -1,0 +1,36 @@
+<h3>Liste des utilisateurs</h3>
+<ul class="users">
+  <li *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="editUser(user)">
+    <span class="badge">{{user.id}}</span> {{user.lname | uppercase}}
+    <button class="delete" title="Supprimer l'utilisateur"
+        (click)="delete(user)">x</button>
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+
+  <h3>Edition</h3>
+
+  <app-user-details-ftr [user]="selectedUser"></app-user-details-ftr>
+  <app-user-edit-ftr [user]="selectedUser"></app-user-edit-ftr>
+
+  <h3>Edition</h3>
+
+  <div>
+  <label>Nom :
+    <input #userLname />
+  </label>
+  <label>Prénom :
+    <input #userFname />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(userLname.value, userFname.value); userLname.value=''; userFname.value=''">
+    add
+  </button>
+
+  <button class="delete" title="Supprimer l'utilisateur"
+      (click)="delete(selectedUser)">x</button>
+</div>
+
+
+</div>

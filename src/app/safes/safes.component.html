@@ -1,0 +1,11 @@
+<h3>Liste des coffres forts de la banque</h3>
+
+<ul class="safes">
+  <li *ngFor="let safe of safes">
+
+    <a routerLink="/safe-details/{{safe.id}}">
+      <span class="badge">{{safe.id}}</span> {{safe.name}}
+    </a>
+
+  </li>
+</ul>

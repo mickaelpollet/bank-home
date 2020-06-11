@@ -1,0 +1,9 @@
+<button (click)="goBack()">go back</button>
+
+<div *ngIf="safe">
+
+  <h2>{{safe.name | uppercase}}</h2>
+  <div><span>ID : </span>{{safe.id}}</div>
+  <div><span>Nom : </span>{{safe.name | uppercase}}</div>
+
+</div>
